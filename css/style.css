@@ -1,0 +1,180 @@
+/* Setup cơ bản trang trước khi CSS */
+* {
+    box-sizing: border-box; /* Đảm bảo kích thước bao gồm cả padding và border */
+}
+
+html {
+    font-size: 16px; /* Thiết lập kích thước gốc 1rem = 16px */
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 2rem 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: #111;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h2, .h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+i, em {
+    font-style: italic;
+}
+
+u {
+    text-decoration: underline;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Layout container chung */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 2.25rem;
+    color: #212529;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* Menu liên kết các bài tập */
+.nav-menu {
+    margin-top: 1.5rem;
+}
+
+.exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.exercise-item {
+    list-style: none;
+}
+
+.exercise-link {
+    display: block;
+    padding: 1rem 1.25rem;
+    background-color: #f1f3f5;
+    border-radius: 6px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #333;
+    border-left: 4px solid #007bff;
+    transition: all 0.2s ease;
+}
+
+.exercise-link:hover {
+    background-color: #e7f1ff;
+    color: #007bff;
+    text-decoration: none;
+    transform: translateX(4px);
+}
+
+/* Form controls & Button dùng chung */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.text-input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #ced4da;
+    outline: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.text-input:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
