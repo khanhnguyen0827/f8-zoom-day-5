@@ -663,3 +663,229 @@ input, textarea, select, button {
     border-color: #0056b3;
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
+
+/* ========================================================
+   BÀI 4: BLOG POST (blog-post.html)
+   ======================================================== */
+
+/* 1. Tùy chỉnh ::selection khi người dùng bôi đen văn bản */
+::selection {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.container-blog {
+    max-width: 860px;
+}
+
+.blog-article {
+    margin: 2rem 0;
+}
+
+.article-title {
+    font-size: 2.25rem; /* rem */
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: #1a252f;
+}
+
+.article-meta {
+    font-size: 0.875rem; /* rem */
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.article-meta strong {
+    color: #333;
+}
+
+.meta-separator {
+    color: #ced4da;
+}
+
+.article-image-wrapper {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.article-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.image-caption {
+    font-size: 0.875rem; /* rem */
+    color: #6c757d;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.blog-content {
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 3rem;
+}
+
+.blog-content p {
+    font-size: 1.0625rem; /* rem */
+    margin-bottom: 1.25rem;
+}
+
+/* 2. Sử dụng ::first-letter tạo kiểu Drop Cap cho đoạn văn đầu tiên */
+.intro-paragraph::first-letter {
+    font-size: 3.5rem; /* rem */
+    float: left;
+    line-height: 0.85;
+    margin-right: 0.625rem;
+    margin-top: 0.25rem;
+    font-weight: 800;
+    color: #007bff;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* 3. Sử dụng ::first-line để làm nổi bật dòng đầu tiên của mỗi đoạn */
+.blog-content p::first-line {
+    font-weight: 600;
+    color: #212529;
+    letter-spacing: 0.2px;
+}
+
+/* 4. Dùng :not() để áp dụng style cho tất cả heading ngoại trừ h1 */
+.blog-article :not(h1):is(h2, h3, h4) {
+    color: #1a2530;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 0.75rem;
+    border-left: 4px solid #007bff;
+    font-weight: 700;
+}
+
+.sub-heading {
+    font-size: 1.5rem; /* rem */
+}
+
+.sub-heading-minor {
+    font-size: 1.25rem; /* rem */
+}
+
+/* 5. Sử dụng ::before để thêm dấu ngoặc kép trang trí cho blockquote */
+.article-quote {
+    position: relative;
+    margin: 2.25rem 0;
+    padding: 1.5rem 1.75rem 1.5rem 4rem;
+    background-color: #f1f8ff;
+    border-left: 5px solid #007bff;
+    border-radius: 6px;
+    font-style: italic;
+    color: #2c3e50;
+    font-size: 1.125rem; /* rem */
+    line-height: 1.7;
+}
+
+.article-quote::before {
+    content: "\201C"; /* Dấu mở ngoặc kép tiếng Anh “ */
+    position: absolute;
+    left: 1rem;
+    top: 0.25rem;
+    font-size: 4rem; /* rem */
+    line-height: 1;
+    color: #007bff;
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+
+/* 6. Phần Comment và hiệu ứng hover */
+.comments-section {
+    border-top: 2px solid #e9ecef;
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+.comments-title {
+    font-size: 1.375rem; /* rem */
+    margin-bottom: 1.5rem;
+    color: #212529;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.comment-item {
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hiệu ứng hover cho từng comment */
+.comment-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* 7. Sử dụng :nth-of-type() để tạo kiểu khác nhau cho các comment cùng loại */
+.comment-item:nth-of-type(odd) {
+    background-color: #ffffff;
+    border-left: 4px solid #007bff;
+}
+
+.comment-item:nth-of-type(odd) .comment-avatar {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.comment-item:nth-of-type(even) {
+    background-color: #f8f9fa;
+    border-left: 4px solid #28a745;
+}
+
+.comment-item:nth-of-type(even) .comment-avatar {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem; /* rem */
+    font-weight: 700;
+}
+
+.comment-author {
+    font-size: 1rem; /* rem */
+    font-weight: 700;
+    color: #212529;
+    margin: 0;
+}
+
+.comment-time {
+    font-size: 0.75rem; /* rem */
+    color: #6c757d;
+}
+
+.comment-body p {
+    font-size: 0.9375rem; /* rem */
+    color: #495057;
+    margin: 0;
+    line-height: 1.5;
+}

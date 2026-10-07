@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Blog Post - F8 Zoom Day 5</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- Style CSS chung và bài tập -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container container-blog">
+        <header class="header">
+            <h1 class="page-title">Bài 4: Blog Post Hoàn Chỉnh</h1>
+            <p class="subtitle">Thực hành ::first-letter (drop cap), ::first-line, ::selection, ::before cho blockquote, :not(h1), hover comment và :nth-of-type()</p>
+            <div class="back-home">
+                <a href="./index.html" class="btn-back">&larr; Quay lại danh sách bài tập</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Khung bài viết Blog -->
+            <article class="blog-article">
+                <!-- Tiêu đề h1 của bài viết -->
+                <h1 class="article-title">Hành Trình Chinh Phục Lập Trình Web Cùng F8</h1>
+                
+                <div class="article-meta">
+                    <span class="meta-author">Tác giả: <strong>Nguyễn Quốc Khánh</strong></span>
+                    <span class="meta-separator">•</span>
+                    <span class="meta-date">Ngày đăng: 07/10/2026</span>
+                    <span class="meta-separator">•</span>
+                    <span class="meta-tag">Chuyên mục: Học lập trình</span>
+                </div>
+
+                <!-- Ảnh đại diện bài viết -->
+                <div class="article-image-wrapper">
+                    <img src="./img/img_logo.png" alt="Ảnh minh họa bài viết F8" class="article-image">
+                    <p class="image-caption">Hình 1: Học lập trình web căn bản với tư duy chuẩn chỉ từ F8</p>
+                </div>
+
+                <!-- Nội dung bài viết -->
+                <div class="blog-content">
+                    <!-- Đoạn văn đầu tiên có Drop Cap với ::first-letter -->
+                    <p class="intro-paragraph">
+                        Lập trình web là một trong những lĩnh vực thú vị và đầy tiềm năng trong kỷ nguyên số. Khi mới bắt đầu, việc học từ HTML, CSS cho đến JavaScript có thể khiến bạn cảm thấy choáng ngợp bởi vô vàn kiến thức mới mẻ. Tuy nhiên, nếu bạn kiên trì dành ra mỗi ngày chỉ một giờ đồng hồ để thực hành, bạn sẽ thấy sự tiến bộ rõ rệt qua từng dòng code.
+                    </p>
+
+                    <!-- Heading h2 (được định dạng bằng :not(h1)) -->
+                    <h2 class="sub-heading">Tầm quan trọng của CSS Pseudo-classes & Pseudo-elements</h2>
+                    <p>
+                        CSS không chỉ đơn thuần là việc tô màu hay đặt kích thước cho các phần tử HTML. Khi bạn thành thạo các pseudo-classes như <code>:hover</code>, <code>:active</code>, <code>:focus</code>, <code>:not()</code> cùng các pseudo-elements như <code>::before</code>, <code>::after</code>, <code>::first-letter</code>, bạn có thể biến một giao diện khô cứng thành một trải nghiệm người dùng sống động và tinh tế.
+                    </p>
+
+                    <!-- Đoạn trích dẫn blockquote có dấu ngoặc kép bằng ::before -->
+                    <blockquote class="article-quote">
+                        Thành công không phải là điều gì đó to tát xảy ra sau một đêm, mà là kết quả của những nỗ lực nhỏ bé được lặp đi lặp lại bền bỉ mỗi ngày. Hãy bắt đầu từ những thẻ HTML đơn giản nhất!
+                    </blockquote>
+
+                    <!-- Heading h3 (được định dạng bằng :not(h1)) -->
+                    <h3 class="sub-heading-minor">Bí quyết tự học hiệu quả cho người mới bắt đầu</h3>
+                    <p>
+                        Đừng học một cách thụ động bằng cách chỉ xem video mà không gõ code. Hãy tự tay thực hành, giải quyết từng bài tập, gặp lỗi rồi tự sửa lỗi (debugging). Đó chính là cách ngắn nhất để ghi nhớ cú pháp và hiểu sâu bản chất vấn đề.
+                    </p>
+                </div>
+
+                <!-- Phần bình luận (Comments) -->
+                <section class="comments-section">
+                    <h2 class="comments-title">Bình luận bài viết (3)</h2>
+                    
+                    <div class="comments-list">
+                        <!-- Comment 1: nth-of-type(1) - odd -->
+                        <div class="comment-item">
+                            <div class="comment-header">
+                                <div class="comment-avatar">NA</div>
+                                <div class="comment-user-info">
+                                    <h4 class="comment-author">Nguyễn Văn An</h4>
+                                    <span class="comment-time">10 phút trước</span>
+                                </div>
+                            </div>
+                            <div class="comment-body">
+                                <p>Bài viết chia sẻ rất hay và bổ ích! Mình rất thích cách giải thích trực quan về các pseudo-elements trong CSS.</p>
+                            </div>
+                        </div>
+
+                        <!-- Comment 2: nth-of-type(2) - even -->
+                        <div class="comment-item">
+                            <div class="comment-header">
+                                <div class="comment-avatar">TB</div>
+                                <div class="comment-user-info">
+                                    <h4 class="comment-author">Trần Thị Bình</h4>
+                                    <span class="comment-time">30 phút trước</span>
+                                </div>
+                            </div>
+                            <div class="comment-body">
+                                <p>Hiệu ứng drop cap và dấu ngoặc kép trích dẫn nhìn chuyên nghiệp như báo điện tử xịn xò vậy!</p>
+                            </div>
+                        </div>
+
+                        <!-- Comment 3: nth-of-type(3) - odd -->
+                        <div class="comment-item">
+                            <div class="comment-header">
+                                <div class="comment-avatar">LC</div>
+                                <div class="comment-user-info">
+                                    <h4 class="comment-author">Lê Hoàng Cường</h4>
+                                    <span class="comment-time">1 giờ trước</span>
+                                </div>
+                            </div>
+                            <div class="comment-body">
+                                <p>Cảm ơn tác giả đã chia sẻ! Rất mong chờ bài viết tiếp theo về Flexbox và Grid nâng cao.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <!-- Mục giải thích kỹ thuật -->
+            <section class="demo-content">
+                <h2 class="h2">Các yêu cầu kỹ thuật đã thực hiện:</h2>
+                <ul class="feature-notes">
+                    <li>
+                        <strong>Drop cap với ::first-letter:</strong> Chữ cái đầu tiên ("L") của đoạn mở đầu được phóng to (3.25rem), in đậm và tô màu xanh thương hiệu.
+                    </li>
+                    <li>
+                        <strong>Nổi bật dòng đầu với ::first-line:</strong> Dòng đầu tiên của mỗi đoạn văn được làm đậm (font-weight: 600) và sắc nét hơn.
+                    </li>
+                    <li>
+                        <strong>Tùy chỉnh ::selection:</strong> Khi bạn dùng chuột bôi đen bất kỳ đoạn văn bản nào trên trang, màu nền bôi đen sẽ là màu xanh dương (<code>#007bff</code>) và chữ màu trắng (<code>#fff</code>).
+                    </li>
+                    <li>
+                        <strong>Dấu ngoặc kép với ::before cho blockquote:</strong> Thẻ trích dẫn <code>blockquote</code> được tự động thêm biểu tượng dấu ngoặc kép <code>\201C</code> to bản đặt ở góc trái.
+                    </li>
+                    <li>
+                        <strong>Sử dụng :not(h1) cho heading:</strong> Tất cả tiêu đề ngoại trừ <code>h1</code> (gồm <code>h2</code>, <code>h3</code>) đều được áp dụng đường viền trang trí bên trái và màu sắc riêng biệt.
+                    </li>
+                    <li>
+                        <strong>Hiệu ứng hover cho từng comment:</strong> Mỗi khung bình luận khi rê chuột vào sẽ trượt nhẹ sang phải và đổi màu nền nổi bật.
+                    </li>
+                    <li>
+                        <strong>Phân biệt bằng :nth-of-type():</strong> Các bình luận vị trí lẻ (odd) và chẵn (even) có màu nền, màu đường viền và màu avatar khác nhau xen kẽ sinh động.
+                    </li>
+                    <li>
+                        <strong>Đơn vị rem:</strong> Toàn bộ <code>font-size</code> được quy chuẩn sang đơn vị <code>rem</code>.
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
