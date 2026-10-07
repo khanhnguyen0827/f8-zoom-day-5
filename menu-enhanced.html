@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: Nâng cấp menu - F8 Zoom Day 5</title>
+    <!-- Reset CSS: loại bỏ các định dạng mặc định -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- Style CSS chung cho toàn bộ bài tập -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="page-title">Bài 1: Nâng cấp menu</h1>
+            <p class="subtitle">Thực hành hover, active, pseudo-elements ::before và pseudo-classes :last-child</p>
+            <div class="back-home">
+                <a href="./index.html" class="btn-back">&larr; Quay lại danh sách bài tập</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Navigation Menu Enhanced -->
+            <nav class="main-nav" aria-label="Menu chính">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="#home" class="nav-link">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Dịch vụ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#products" class="nav-link">Sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#news" class="nav-link">Tin tức</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Liên hệ</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <section class="demo-content">
+                <h2 class="h2">Các yêu cầu kỹ thuật đã thực hiện:</h2>
+                <ul class="feature-notes">
+                    <li>
+                        <strong>Hiệu ứng Hover:</strong> Đổi màu nền (background-color), màu chữ (color) và icon xoay/chuyển động mượt mà khi rê chuột.
+                    </li>
+                    <li>
+                        <strong>Hiệu ứng Active:</strong> Tạo cảm giác bấm trực quan khi click chuột (<code>:active</code>) với độ lún nhẹ (scale).
+                    </li>
+                    <li>
+                        <strong>Vạch ngăn cách:</strong> Sử dụng <code>border-right</code> giữa các thẻ <code>li</code>.
+                    </li>
+                    <li>
+                        <strong>Loại bỏ vạch thừa:</strong> Sử dụng <code>:last-child</code> để xóa đường viền ngăn cách ở mục cuối cùng.
+                    </li>
+                    <li>
+                        <strong>Biểu tượng icon:</strong> Sử dụng <code>::before</code> với mã unicode (<code>\25B8</code> - ▶) đặt trước mỗi mục trong menu.
+                    </li>
+                    <li>
+                        <strong>Đơn vị font-size:</strong> Toàn bộ font-size trong bài đều được quy đổi sang đơn vị <code>rem</code>.
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
