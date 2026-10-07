@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: Bảng giá dịch vụ - F8 Zoom Day 5</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- Style CSS chung và bài tập -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container container-wide">
+        <header class="header">
+            <h1 class="page-title">Bài 3: Bảng giá dịch vụ (Pricing Table)</h1>
+            <p class="subtitle">Thực hành layout thẻ gói dịch vụ, hiệu ứng hover nổi khối (box-shadow), :nth-child(2) nổi bật gói Pro và ::before tạo icon ✓</p>
+            <div class="back-home">
+                <a href="./index.html" class="btn-back">&larr; Quay lại danh sách bài tập</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- 3 khối Pricing đặt cạnh nhau -->
+            <div class="pricing-container">
+                <!-- Gói 1: Basic -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h2 class="pricing-name">Gói Basic</h2>
+                        <p class="pricing-desc">Phù hợp cho cá nhân mới bắt đầu học lập trình</p>
+                        <div class="pricing-price">
+                            <span class="currency">₫</span>
+                            <span class="amount">199.000</span>
+                            <span class="period">/tháng</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="feature-item">Truy cập hơn 20 khóa học cơ bản</li>
+                        <li class="feature-item">Tham gia cộng đồng học viên</li>
+                        <li class="feature-item">Hỗ trợ qua diễn đàn hỏi đáp</li>
+                        <li class="feature-item disabled">Chấm bài và review code 1-1</li>
+                        <li class="feature-item disabled">Cấp chứng chỉ tốt nghiệp Pro</li>
+                    </ul>
+                    <div class="pricing-action">
+                        <a href="#register-basic" class="btn btn-pricing">Đăng ký ngay</a>
+                    </div>
+                </div>
+
+                <!-- Gói 2: Pro (Được làm nổi bật bằng :nth-child(2)) -->
+                <div class="pricing-card">
+                    <span class="pricing-badge">Phổ biến nhất</span>
+                    <div class="pricing-header">
+                        <h2 class="pricing-name">Gói Pro</h2>
+                        <p class="pricing-desc">Lựa chọn lý tưởng cho lập trình viên muốn đi làm</p>
+                        <div class="pricing-price">
+                            <span class="currency">₫</span>
+                            <span class="amount">499.000</span>
+                            <span class="period">/tháng</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="feature-item">Truy cập tất cả các khóa học Pro</li>
+                        <li class="feature-item">Review code trực tiếp cùng Mentor</li>
+                        <li class="feature-item">Hỗ trợ hỏi đáp ưu tiên 24/7</li>
+                        <li class="feature-item">Dự án thực tế làm portfolio</li>
+                        <li class="feature-item disabled">Đào tạo phỏng vấn thử 1-1</li>
+                    </ul>
+                    <div class="pricing-action">
+                        <a href="#register-pro" class="btn btn-pricing btn-primary">Đăng ký ngay</a>
+                    </div>
+                </div>
+
+                <!-- Gói 3: Premium -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h2 class="pricing-name">Gói Premium</h2>
+                        <p class="pricing-desc">Dành cho người muốn cam kết việc làm và đồng hành trọn gói</p>
+                        <div class="pricing-price">
+                            <span class="currency">₫</span>
+                            <span class="amount">999.000</span>
+                            <span class="period">/tháng</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="feature-item">Toàn bộ quyền lợi của gói Pro</li>
+                        <li class="feature-item">Mentor 1-1 kèm cặp suốt khóa học</li>
+                        <li class="feature-item">Luyện phỏng vấn chuyên sâu 1-1</li>
+                        <li class="feature-item">Giới thiệu việc làm tại doanh nghiệp</li>
+                        <li class="feature-item">Hỗ trợ trọn đời sau khi tốt nghiệp</li>
+                    </ul>
+                    <div class="pricing-action">
+                        <a href="#register-premium" class="btn btn-pricing">Đăng ký ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mục giải thích kỹ thuật -->
+            <section class="demo-content">
+                <h2 class="h2">Các yêu cầu kỹ thuật đã thực hiện:</h2>
+                <ul class="feature-notes">
+                    <li>
+                        <strong>Layout 3 khối cạnh nhau:</strong> Sử dụng CSS Grid / Flexbox giúp 3 khối thẻ dàn hàng ngang đồng đều và tự động co giãn.
+                    </li>
+                    <li>
+                        <strong>Hiệu ứng nổi lên khi :hover:</strong> Khi di chuột vào mỗi gói, thẻ sẽ nhấc lên với <code>transform: translateY(-8px)</code> và đổ bóng đậm hơn bằng <code>box-shadow</code> mượt mà.
+                    </li>
+                    <li>
+                        <strong>Làm nổi bật gói ở giữa với :nth-child(2):</strong> Sử dụng bộ chọn <code>.pricing-card:nth-child(2)</code> để tô viền xanh nổi bật, tăng kích thước (scale nhẹ), đổi màu nút bấm và hiển thị nhãn "Phổ biến nhất".
+                    </li>
+                    <li>
+                        <strong>Biểu tượng ✓ với ::before:</strong> Sử dụng <code>::before</code> với mã unicode <code>\2713</code> (màu xanh lá) tự động hiển thị trước mỗi mục tính năng có sẵn.
+                    </li>
+                    <li>
+                        <strong>Đơn vị rem:</strong> Toàn bộ <code>font-size</code> được quy chuẩn sang đơn vị <code>rem</code>.
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

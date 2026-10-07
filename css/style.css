@@ -473,3 +473,193 @@ input, textarea, select, button {
     transform: scale(0.98);
     box-shadow: 0 2px 6px rgba(0, 64, 133, 0.25);
 }
+
+/* ========================================================
+   BÀI 3: BẢNG GIÁ DỊCH VỤ (pricing-table.html)
+   ======================================================== */
+
+.container-wide {
+    max-width: 1050px;
+}
+
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2.5rem 0;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 2.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+}
+
+/* 1. Sử dụng :hover để tạo hiệu ứng nổi lên khi di chuột qua mỗi gói */
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* 2. Dùng :nth-child(2) để làm nổi bật gói ở giữa (gói Pro) */
+.pricing-card:nth-child(2) {
+    border: 2px solid #007bff;
+    box-shadow: 0 8px 24px rgba(0, 123, 255, 0.15);
+    transform: scale(1.03);
+    z-index: 1;
+}
+
+.pricing-card:nth-child(2):hover {
+    transform: scale(1.03) translateY(-10px);
+    box-shadow: 0 22px 42px rgba(0, 123, 255, 0.25);
+}
+
+.pricing-card:nth-child(2) .pricing-name {
+    color: #007bff;
+}
+
+/* Badge nổi bật trên gói Pro */
+.pricing-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 0.75rem; /* rem */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.pricing-header {
+    text-align: center;
+    border-bottom: 1px solid #f1f3f5;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-name {
+    font-size: 1.625rem; /* rem */
+    margin-bottom: 0.5rem;
+}
+
+.pricing-desc {
+    color: #6c757d;
+    font-size: 0.875rem; /* rem */
+    min-height: 2.6rem;
+}
+
+.pricing-price {
+    margin-top: 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    color: #212529;
+}
+
+.pricing-price .currency {
+    font-size: 1.25rem; /* rem */
+    font-weight: 600;
+    margin-right: 0.25rem;
+}
+
+.pricing-price .amount {
+    font-size: 2.25rem; /* rem */
+    font-weight: 800;
+}
+
+.pricing-price .period {
+    font-size: 0.875rem; /* rem */
+    color: #6c757d;
+    margin-left: 0.35rem;
+}
+
+/* 3. Danh sách tính năng và icon ✓ với ::before */
+.pricing-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.feature-item {
+    font-size: 0.9375rem; /* rem */
+    color: #495057;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+}
+
+/* Sử dụng ::before để thêm icon ✓ trước mỗi tính năng có sẵn */
+.feature-item::before {
+    content: "\2713"; /* Unicode dấu checkmark ✓ */
+    color: #28a745;
+    font-size: 1.125rem; /* rem */
+    font-weight: 800;
+    margin-right: 0.625rem;
+    flex-shrink: 0;
+}
+
+/* Tính năng chưa có sẵn */
+.feature-item.disabled {
+    color: #adb5bd;
+    text-decoration: line-through;
+}
+
+.feature-item.disabled::before {
+    content: "\2715"; /* Unicode dấu gạch chéo ✕ */
+    color: #ced4da;
+    font-size: 0.875rem; /* rem */
+}
+
+/* Nút đăng ký gói */
+.pricing-action {
+    margin-top: auto;
+}
+
+.btn-pricing {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem; /* rem */
+    font-weight: 600;
+    text-align: center;
+    background-color: #f1f3f5;
+    color: #495057;
+    border: 1px solid #dee2e6;
+    transition: all 0.25s ease;
+}
+
+.btn-pricing:hover {
+    background-color: #e9ecef;
+    color: #212529;
+    text-decoration: none;
+}
+
+.btn-pricing.btn-primary,
+.pricing-card:nth-child(2) .btn-pricing {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+}
+
+.btn-pricing.btn-primary:hover,
+.pricing-card:nth-child(2) .btn-pricing:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
