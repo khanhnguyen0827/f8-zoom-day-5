@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Form tương tác - F8 Zoom Day 5</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- Style CSS chung và bài tập -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="page-title">Bài 2: Form tương tác</h1>
+            <p class="subtitle">Thực hành trạng thái :focus, :invalid, ::after (dấu * bắt buộc), hover/active cho button và :focus-within cho container</p>
+            <div class="back-home">
+                <a href="./index.html" class="btn-back">&larr; Quay lại danh sách bài tập</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Form Card Container với hiệu ứng :focus-within -->
+            <div class="form-card">
+                <form action="#" method="post" class="interactive-form" novalidate>
+                    <h2 class="h2 form-heading">Đăng ký tài khoản</h2>
+
+                    <!-- Họ và tên (Bắt buộc) -->
+                    <div class="form-group">
+                        <label for="fullname" class="form-label required">Họ và tên</label>
+                        <input 
+                            type="text" 
+                            id="fullname" 
+                            name="fullname" 
+                            class="text-input" 
+                            placeholder="Ví dụ: Nguyễn Văn A" 
+                            required 
+                            minlength="2"
+                        >
+                        <span class="input-hint">Họ tên phải có ít nhất 2 ký tự</span>
+                    </div>
+
+                    <!-- Email (Bắt buộc, kiểm tra định dạng email) -->
+                    <div class="form-group">
+                        <label for="email" class="form-label required">Địa chỉ Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="text-input" 
+                            placeholder="email@example.com" 
+                            required
+                        >
+                        <span class="input-hint">Vui lòng nhập đúng định dạng email (ví dụ: name@domain.com)</span>
+                    </div>
+
+                    <!-- Mật khẩu (Bắt buộc, tối thiểu 6 ký tự) -->
+                    <div class="form-group">
+                        <label for="password" class="form-label required">Mật khẩu</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="text-input" 
+                            placeholder="Tối thiểu 6 ký tự" 
+                            required 
+                            minlength="6"
+                        >
+                        <span class="input-hint">Mật khẩu tối thiểu 6 ký tự</span>
+                    </div>
+
+                    <!-- Số điện thoại (Bắt buộc, pattern 10 số) -->
+                    <div class="form-group">
+                        <label for="phone" class="form-label required">Số điện thoại</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            class="text-input" 
+                            placeholder="0912345678" 
+                            pattern="0[0-9]{9}" 
+                            required
+                        >
+                        <span class="input-hint">Số điện thoại 10 chữ số bắt đầu bằng số 0</span>
+                    </div>
+
+                    <!-- Lời nhắn (Không bắt buộc) -->
+                    <div class="form-group">
+                        <label for="message" class="form-label">Lời nhắn / Giới thiệu</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            class="text-input text-area" 
+                            rows="4" 
+                            placeholder="Nhập ghi chú thêm nếu có..."
+                        ></textarea>
+                    </div>
+
+                    <!-- Nút submit với hiệu ứng hover và active -->
+                    <button type="submit" class="btn btn-submit">Đăng ký ngay</button>
+                </form>
+            </div>
+
+            <!-- Mục giải thích kỹ thuật -->
+            <section class="demo-content">
+                <h2 class="h2">Các yêu cầu kỹ thuật đã thực hiện:</h2>
+                <ul class="feature-notes">
+                    <li>
+                        <strong>Đổi màu viền khi :focus:</strong> Tất cả input đổi viền sang màu xanh dương kèm hiệu ứng viền phát sáng (box-shadow).
+                    </li>
+                    <li>
+                        <strong>Đổi màu viền khi :invalid:</strong> Khi người dùng nhập sai định dạng hoặc bỏ trống trường bắt buộc, viền input tự động chuyển sang màu đỏ cảnh báo.
+                    </li>
+                    <li>
+                        <strong>Dấu sao đỏ (*) với ::after:</strong> Các nhãn có class <code>.required</code> được tự động gắn dấu sao đỏ thông qua pseudo-element <code>::after</code>.
+                    </li>
+                    <li>
+                        <strong>Hover và Active cho nút Submit:</strong> Nút đổi sắc độ xanh đậm hơn khi rê chuột và lún xuống (scale 0.98) khi nhấn chuột.
+                    </li>
+                    <li>
+                        <strong>Container đổi style với :focus-within:</strong> Khi bất kỳ ô input/textarea nào bên trong form được active/focus, toàn bộ khung viền <code>.form-card</code> sẽ sáng lên và nổi bật hơn.
+                    </li>
+                    <li>
+                        <strong>Đơn vị rem:</strong> Toàn bộ <code>font-size</code> được quy chuẩn sang đơn vị <code>rem</code>.
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -360,3 +360,116 @@ input, textarea, select, button {
     color: #333;
     font-size: 1rem;
 }
+
+/* ========================================================
+   BÀI 2: FORM TƯƠNG TÁC (form-interactive.html)
+   ======================================================== */
+
+.form-card {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 2rem;
+    background-color: #ffffff;
+    margin: 2rem 0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Thêm style cho container/form khi có phần tử bên trong được focus */
+.form-card:focus-within {
+    border-color: #007bff;
+    box-shadow: 0 8px 24px rgba(0, 123, 255, 0.12);
+}
+
+.form-heading {
+    margin-bottom: 1.5rem;
+    color: #212529;
+    font-size: 1.5rem; /* rem */
+    text-align: center;
+}
+
+/* Sử dụng ::after để thêm dấu sao đỏ (*) cho các trường bắt buộc */
+.form-label.required::after {
+    content: " *";
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 1rem; /* rem */
+}
+
+/* 1. Xử lý tất cả input/textarea đổi màu viền khi focus */
+.interactive-form input.text-input,
+.interactive-form textarea.text-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem; /* rem */
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.interactive-form input.text-input:focus,
+.interactive-form textarea.text-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.2);
+    background-color: #ffffff;
+}
+
+/* 2. Khi nhập text có lỗi (invalid) thì đổi màu viền sang đỏ */
+.interactive-form input.text-input:not(:placeholder-shown):invalid,
+.interactive-form textarea.text-input:not(:placeholder-shown):invalid {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+.interactive-form input.text-input:focus:invalid,
+.interactive-form textarea.text-input:focus:invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.2);
+}
+
+.text-area {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.input-hint {
+    display: none;
+    font-size: 0.8125rem; /* rem */
+    margin-top: 0.375rem;
+    color: #6c757d;
+}
+
+.interactive-form input.text-input:not(:placeholder-shown):invalid ~ .input-hint {
+    display: block;
+    color: #dc3545;
+}
+
+/* 3. Tạo hiệu ứng hover và active cho nút submit */
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 1.125rem; /* rem */
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+}
+
+/* Hover: sáng màu, hơi nâng lên */
+.btn-submit:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
+}
+
+/* Active: màu đậm hơn, lún xuống */
+.btn-submit:active {
+    background-color: #004085;
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 64, 133, 0.25);
+}
